@@ -1,6 +1,7 @@
 =====================Exercise Checking Report========================
 Exercise No.........................: 4
 First Student Details........: 313426975 - Dor Lasri
+First Student Details........: 203516794 - Sagiv Levy
 Delivery Date......................: 16 June 2020
 Delivery In Delay................: No
 Delivery Reason..................:
