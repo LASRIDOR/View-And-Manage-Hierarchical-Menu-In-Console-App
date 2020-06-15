@@ -4,18 +4,24 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    public delegate void MenuOptionInvoker();
-
     public class ActionOption : MenuOption
     {
-        public event MenuOptionInvoker m_MenuOptionInvoker = null;
+        public delegate void MenuOptionInvoker();
 
-        public ActionOption(string i_Title, int i_IndexOfOption, MenuOptionInvoker i_ActionDelegate): base(i_Title, i_IndexOfOption)
+        public event MenuOptionInvoker m_MenuOptionInvoker;
+
+        // for back and exit option in menu
+        public ActionOption(string i_Title) : base(i_Title)
+        {
+            m_MenuOptionInvoker = null;
+        }
+
+        public ActionOption(string i_Title, MenuOptionInvoker i_ActionDelegate) : base(i_Title)
         {
             m_MenuOptionInvoker += i_ActionDelegate;
         }
 
-        protected override void OnChose()
+        internal override void OnChose()
         {
             // lets tell the form that I was clicked:
             if (m_MenuOptionInvoker != null)
@@ -26,6 +32,11 @@ namespace Ex04.Menus.Delegates
             {
                 Console.WriteLine("No Such Of Option");
             }
+        }
+
+        public override string ToString()
+        {
+            return string.Format("press {0} to {1}", ItemIndex, Title);
         }
     }
 }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ex04.Menus.Delegates
+namespace Ex04.Menus.Interfaces
 {
     public abstract class MenuOption
     {
@@ -11,7 +11,7 @@ namespace Ex04.Menus.Delegates
 
         internal abstract void OnChose();
 
-        // for ctor of mainmenu
+        // for c'tor of main-menu
         public MenuOption()
         {
             m_Title = string.Empty;

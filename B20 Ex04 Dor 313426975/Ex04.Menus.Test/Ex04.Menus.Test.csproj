@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{E90304FC-F1E4-48F9-81E8-831A71BD0B51}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <RootNamespace>Ex04.Menus.Test</RootNamespace>
     <AssemblyName>Ex04.Menus.Test</AssemblyName>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
@@ -34,5 +34,18 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="MenuOptionsForTester.cs" />
+    <Compile Include="MenuTestBuilder.cs" />
+    <Compile Include="Program.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Ex04.Menus.Delegates">
+      <HintPath>..\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.dll</HintPath>
+    </Reference>
+    <Reference Include="Ex04.Menus.Interfaces">
+      <HintPath>..\Ex04.Menus.Interfaces\bin\Debug\Ex04.Menus.Interfaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

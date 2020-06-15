@@ -1,9 +1,8 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Ex04.Menus.Delegates
+namespace Ex04.Menus.Interfaces
 {
     public class SubMenu : MenuOption
     {
@@ -30,6 +29,15 @@ namespace Ex04.Menus.Delegates
             get { return r_MenuOptions; }
         }
 
+        public void Add(MenuOption i_MenuSubItemToAdd)
+        {
+            // Update item index for the given MenuItem
+            i_MenuSubItemToAdd.ItemIndex = r_MenuOptions.Count;
+
+            // Append the given MenuItem to this item list
+            r_MenuOptions.Add(i_MenuSubItemToAdd);
+        }
+
         internal override void OnChose()
         {
             if (r_MenuOptions.Count == 0)
@@ -40,15 +48,6 @@ namespace Ex04.Menus.Delegates
             {
                 showSubMenu();
             }
-        }
-
-        public void Add(MenuOption i_MenuSubItemToAdd)
-        {
-            // Update item index for the given MenuItem
-            i_MenuSubItemToAdd.ItemIndex = r_MenuOptions.Count;
-
-            // Append the given MenuItem to this item list
-            r_MenuOptions.Add(i_MenuSubItemToAdd);
         }
 
         private void showSubMenu()
