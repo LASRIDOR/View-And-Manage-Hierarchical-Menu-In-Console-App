@@ -1,31 +1,22 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    public class SubMenu : MenuOption
+    public class SubMenu : MenuItem
     {
         private static readonly int sr_BackChoiceIndex = 0;  // For Back (or Exit in case of MainMenu).
         private static readonly string sr_Back = "Back";
-        private readonly List<MenuOption> r_MenuOptions;
+        private readonly List<MenuItem> r_MenuOptions;
 
-        /*
-        public SubMenu()
-        {
-            // for submenu that doesnt need title
-            r_MenuOptions = new List<MenuOption>();
-        }
-        */
         public SubMenu(string i_Title) : base(i_Title)
         {
-            r_MenuOptions = new List<MenuOption>();
-            // must have back option
-            Add(new ActionOption(sr_Back));
+            r_MenuOptions = new List<MenuItem>();
+            Add(new ActionItem(sr_Back));             // must have back option
         }
 
-        public List<MenuOption> MenuOptions
+        public List<MenuItem> MenuOptions
         {
             get { return r_MenuOptions; }
         }
@@ -42,7 +33,7 @@ namespace Ex04.Menus.Delegates
             }
         }
 
-        public void Add(MenuOption i_MenuSubItemToAdd)
+        public void Add(MenuItem i_MenuSubItemToAdd)
         {
             // Update item index for the given MenuItem
             i_MenuSubItemToAdd.ItemIndex = r_MenuOptions.Count;
@@ -73,11 +64,11 @@ namespace Ex04.Menus.Delegates
         {
             StringBuilder printListOfMenu = new StringBuilder();
 
-            foreach (MenuOption option in r_MenuOptions)
+            foreach (MenuItem option in r_MenuOptions)
             {
                 if (option.ItemIndex != sr_BackChoiceIndex)
                 {
-                    if (option is ActionOption)
+                    if (option is ActionItem)
                     {
                         printListOfMenu.Append(option.ToString());
                     }
@@ -85,11 +76,12 @@ namespace Ex04.Menus.Delegates
                     {
                         printListOfMenu.Append(string.Format("press {0} to {1}", option.ItemIndex, option.Title));
                     }
+
                     printListOfMenu.Append(Environment.NewLine);
                 }
             }
-            // back or exit menu will be at the end
-            printListOfMenu.Append(r_MenuOptions[sr_BackChoiceIndex].ToString());
+
+            printListOfMenu.Append(r_MenuOptions[sr_BackChoiceIndex].ToString()); // back or exit menu will be at the end
             printListOfMenu.Append(Environment.NewLine);
 
             return printListOfMenu.ToString();

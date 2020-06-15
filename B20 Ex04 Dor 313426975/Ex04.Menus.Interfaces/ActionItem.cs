@@ -4,21 +4,21 @@ using System.Text;
 
 namespace Ex04.Menus.Interfaces
 {
-    public class ActionOption : MenuOption
+    public class ActionItem : MenuItem
     {
-        private Doable m_Doable;
+        private IDoable m_Doable;
 
-        public ActionOption(string i_Title) : base(i_Title)
+        public ActionItem(string i_Title) : base(i_Title)
         {
             m_Doable = null;
         }
 
-        public ActionOption(string i_Title, Doable i_ActionDelegate) : base(i_Title)
+        public ActionItem(string i_Title, IDoable i_ActionDelegate) : base(i_Title)
         {
             m_Doable = i_ActionDelegate;
         }
 
-        public Doable Do
+        public IDoable Do
         {
             get { return m_Doable; }
             set { m_Doable = value; }
@@ -35,6 +35,7 @@ namespace Ex04.Menus.Interfaces
                 m_Doable.Do();
             }
         }
+
         public override string ToString()
         {
             return string.Format("press {0} to {1}", ItemIndex, Title);

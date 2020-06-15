@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex04.Menus.Interfaces
 {
-    public interface Doable
+    public interface IDoable
     {
         void Do();
     }

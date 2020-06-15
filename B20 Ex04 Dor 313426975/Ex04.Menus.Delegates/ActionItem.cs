@@ -4,29 +4,29 @@ using System.Text;
 
 namespace Ex04.Menus.Delegates
 {
-    public class ActionOption : MenuOption
+    public class ActionItem : MenuItem
     {
-        public delegate void MenuOptionInvoker();
+        public delegate void MenuOptionDelegate();
 
-        public event MenuOptionInvoker m_MenuOptionInvoker;
+        public event MenuOptionDelegate MenuOptionToDoWhenChose;
 
         // for back and exit option in menu
-        public ActionOption(string i_Title) : base(i_Title)
+        public ActionItem(string i_Title) : base(i_Title)
         {
-            m_MenuOptionInvoker = null;
+            MenuOptionToDoWhenChose = null;
         }
 
-        public ActionOption(string i_Title, MenuOptionInvoker i_ActionDelegate) : base(i_Title)
+        public ActionItem(string i_Title, MenuOptionDelegate i_ActionDelegate) : base(i_Title)
         {
-            m_MenuOptionInvoker += i_ActionDelegate;
+            MenuOptionToDoWhenChose += i_ActionDelegate;
         }
 
         internal override void OnChose()
         {
             // lets tell the form that I was clicked:
-            if (m_MenuOptionInvoker != null)
+            if (MenuOptionToDoWhenChose != null)
             {
-                m_MenuOptionInvoker.Invoke();
+                MenuOptionToDoWhenChose.Invoke();
             }
             else
             {

@@ -6,8 +6,8 @@ namespace Ex04.Menus.Test
     {
         public static void Main()
         {
-            MenuTestBuilder.RunDelegateMenuTest();
             MenuTestBuilder.RunInterfacesMenutest();
+            MenuTestBuilder.RunDelegateMenuTest();
         }
     }
 }

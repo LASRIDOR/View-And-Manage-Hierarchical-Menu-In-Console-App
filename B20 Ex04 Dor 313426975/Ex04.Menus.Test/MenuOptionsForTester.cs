@@ -5,7 +5,7 @@ namespace Ex04.Menus.Test
 {
     public class MenuOptionsForTester
     {
-        public class CountCaptials : Doable
+        public class CountCaptials : IDoable
         {
             public void Do()
             {
@@ -32,7 +32,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        public class ShowVersion : Doable
+        public class ShowVersion : IDoable
         {
             public void Do()
             {
@@ -40,7 +40,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        public class ShowCurrTime : Doable
+        public class ShowCurrTime : IDoable
         {
             public void Do()
             {
@@ -48,7 +48,7 @@ namespace Ex04.Menus.Test
             }
         }
 
-        public class ShowCurrDate : Doable
+        public class ShowCurrDate : IDoable
         {
             public void Do()
             {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Ex04.Menus.Interfaces
 {
-    public abstract class MenuOption
+    public abstract class MenuItem
     {
         private string m_Title;
         private int m_ItemIndex;
@@ -12,13 +12,13 @@ namespace Ex04.Menus.Interfaces
         internal abstract void OnChose();
 
         // for c'tor of main-menu
-        public MenuOption()
+        public MenuItem()
         {
             m_Title = string.Empty;
             m_ItemIndex = 0;
         }
 
-        public MenuOption(string i_Title)
+        public MenuItem(string i_Title)
         {
             Title = i_Title;
         }
