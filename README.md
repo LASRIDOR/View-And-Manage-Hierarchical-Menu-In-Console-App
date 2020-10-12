@@ -15,8 +15,7 @@
 implement a department that assists in the presentation and management of hierarchical menus for applications Console.
 This department should allow (the program it will use) to build a menu according to its needs by defining menu items in the main menu or for each submenu.
 This class should be called MainMenu.
-An app that wants to display menus to the user.
-Must hold a MainMenu class instance.
+An app that wants to display menus to the user must hold a MainMenu class instance.
 The MainMenu class will allow its user to build the menu hierarchy (say in the boot phase of his app) by setting and adding items
 (MenuItem) to menu and sub-items for each item and so on ..
 As an example of a menu with hierarchically constructed menu items, take for example the studio visual menu
