@@ -16,16 +16,12 @@ implement a department that assists in the presentation and management of hierar
 This department should allow (the program it will use) to build a menu according to its needs by defining menu items in the main menu or for each submenu.
 This class should be called MainMenu.
 An app that wants to display menus to the user must hold a MainMenu class instance.
-The MainMenu class will allow its user to build the menu hierarchy (say in the boot phase of his app) by setting and adding items
-(MenuItem) to menu and sub-items for each item and so on ..
-As an example of a menu with hierarchically constructed menu items, take for example the studio visual menu
-- The main menu is at the top of the window and contains a number of items at the first level (... View, Edit, File) that contain items themselves. Clicking on some of the items causes a certain action in the software. Clicking on other items causes a submenu to appear (additional menu items grouped below the item)
-We chose) and so on ..
+The MainMenu class will allow its user (for example the programmer who builds the garage app) to build the menu hierarchy (say in the initialization stage of his app) by defining and adding menu items (MenuItem) to the menu and sub-items for each item and so on.
+As an example of a menu with menu items built in a hierarchical way, take for example the menu of studio visual - the main menu is at the top of the window and contains several items at the first level ... View, Edit, File, which contain items themselves. Clicking on some of the items causes some action in the software. Clicking on other items causes a sub-menu to appear (additional menu items grouped under the item we selected) and so on.
 
 # Characterization
-As mentioned, you need to implement a software component that provides display and management of hierarchical menus for applications. Console
-Enabling the m_MainMenu.Show () function will display the main menu (first level) and in practice
-Maintain the loop that will actually be the main loop that every console application needs to exist.
+As mentioned, you need to implement a software component that provides display and management of hierarchical menus for Console applications.
+Enabling the m_MainMenu.Show () function will display the main menu (first level) and will actually hold the loop that will actually be the main loop that each console application needs to exist.
 At each stage:
 1. The current level of the user menu will be displayed
 2. A request will be displayed for the user to select one of the items.
